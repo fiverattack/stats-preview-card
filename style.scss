@@ -11,14 +11,79 @@ $trans-white-paragraph: hsla(0, 0%, 100%, 0.75);
 $trans-white-stats: hsla(0, 0%, 100%, 0.6);
 
 
-// styling
+// main styling
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: $background;
+    color: $white;
+    height: 100vh;
+    padding: 5em;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+}
 
-// pre made styles
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.wrapper {
+    place-self: center;
+    background-color: $accent;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.image {
+    opacity: .6;
+    max-width: 50%;
+}
+
+
+// content
+.content {
+    background-color: $card-background;
+    padding: 3em;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    &--accent {
+        color: $accent;
+    }
+}
+
+.main-paragraph {
+    color: $trans-white-paragraph;
+}
+
+.stats {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+    &__stat {
+    }
+
+    &__number {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    &__type {
+        color: $trans-white-stats;
+        text-transform: uppercase;
+    }
+}
+
+.attribution { 
+    place-self: end center;
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
